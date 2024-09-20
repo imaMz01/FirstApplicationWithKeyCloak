@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: FirstAppWithKeyCloak
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/FirstRealm
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs #this is how to validate our certification or jwt token
+
+server:
+  port: 8082
